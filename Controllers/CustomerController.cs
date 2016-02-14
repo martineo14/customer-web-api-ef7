@@ -10,8 +10,13 @@ namespace CustomerWebApi.Controllers
     [Route("api/[controller]")]
     public class CustomerController : Controller
     {
-       
-        private CustomerRepository repository = new CustomerRepository(new CustomerContext());
+        private readonly IRepository repository;
+
+        public CustomerController(IRepository customerRepository)
+        {
+            repository = customerRepository;
+        }
+        
         // GET: api/Customer
         [HttpGet]
         public IEnumerable<Customer> Get()
