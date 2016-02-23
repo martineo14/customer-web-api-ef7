@@ -7,10 +7,10 @@ namespace CustomerWebApi.DAL
     public interface IRepository : IDisposable
     {
         IEnumerable<Customer> GetCustomers();
-        Customer GetCustomerByID(int studentId);
-        void InsertCustomer(Customer student);
-        void DeleteCustomer(int studentID);
-        void UpdateCustomer(Customer student);
+        Customer GetCustomerByID(int customerID);
+        void InsertCustomer(Customer customer);
+        void DeleteCustomer(int customerID);
+        void UpdateCustomer(Customer customer);
         void Save();
     }
 }
